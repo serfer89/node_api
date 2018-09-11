@@ -11,3 +11,17 @@ exports.rooms_details = function (req, res) {
         res.send(product);
     })
 };
+
+exports.findDocuments = function(db, callback) {
+  // Get the documents collection
+  const collection = db.collection('rooms');
+  // Find some documents
+  collection.find({}).toArray(function(err, docs) {
+    assert.equal(err, null);
+    console.log("Found the following records");
+    console.log(docs)
+    callback(docs);
+  });
+}
+
+ 
