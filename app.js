@@ -16,7 +16,7 @@ const dbName = 'shc';
 
 const findDocuments = function(db, callback) {
   // Get the documents collection
-  const collection = db.collection('documents');
+  const collection = db.collection('rooms');
   // Find some documents
   collection.find({}).toArray(function(err, docs) {
     assert.equal(err, null);
@@ -45,3 +45,4 @@ let port = 1234;
 app.listen(port, () => {
     console.log('Server is up and running on port numner ' + port);
 });
+
